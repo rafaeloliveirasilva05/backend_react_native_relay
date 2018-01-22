@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
+    ScrollView,
 } from 'react-native';
 
 import {
@@ -14,18 +15,17 @@ import {
 class Post extends React.Component {
     render() {
 
-        const item = this.props.player;
+        const player = this.props.player;
 
         return (
-            <View>
-                <Text>oioi</Text>
-                <Text>{item.nome}</Text>
+            <View style={{ flex: 1, backgroundColor: '#fff' }}>
+                <ScrollView>
+                    <Text>{player.nome}teste</Text>
+                </ScrollView>
             </View>
         )
     }
 }
-
-
 
 export default createFragmentContainer(
     Post,
@@ -35,6 +35,4 @@ export default createFragmentContainer(
         }
     `,
 );
-
-
 

@@ -31,9 +31,7 @@ export default class App extends Component<{}> {
           if (error) {
             return <Text>{error.message}</Text>;
           } else if (props) {
-            //return <Text>{props.player.gender}</Text>;
-            return <Post player={props} />
-
+            return <Post player={props.players} />
           }
           return <Text>Loading</Text>;
         }}
@@ -41,6 +39,7 @@ export default class App extends Component<{}> {
     );
   }
 }
+
 
 
 
