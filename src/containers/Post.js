@@ -11,16 +11,15 @@ import {
     createFragmentContainer,
 } from 'react-relay'
 
-
 class Post extends React.Component {
     render() {
-
-        const player = this.props.player;
-
         return (
             <View style={{ flex: 1, backgroundColor: '#fff' }}>
                 <ScrollView>
-                    <Text>{player.nome}teste</Text>
+                    {this.props.players.map(player => (
+
+                        <Text>{player.fullName}teste</Text>
+                    ))}
                 </ScrollView>
             </View>
         )
@@ -30,9 +29,8 @@ class Post extends React.Component {
 export default createFragmentContainer(
     Post,
     graphql`
-        fragment Post_item on Player{
+        fragment Post_item on Player @relay(plural: true){
             fullName
         }
     `,
 );
-

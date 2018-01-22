@@ -14,6 +14,7 @@ import environment from './environment'
 import Post from './containers/Post'
 
 export default class App extends Component<{}> {
+
   render() {
     return (
 
@@ -31,7 +32,7 @@ export default class App extends Component<{}> {
           if (error) {
             return <Text>{error.message}</Text>;
           } else if (props) {
-            return <Post player={props.players} />
+            return <Post players={props.players} />
           }
           return <Text>Loading</Text>;
         }}
