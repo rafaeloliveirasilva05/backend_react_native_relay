@@ -1,0 +1,17 @@
+type Player {
+  lastYear: Int
+  rookieYear: Int
+  fullName: String
+  lastName: String
+  firstName: String
+  birthDate: Int
+  profileUrl: String
+  status: String
+  team: String
+  playerId: Int
+}
+
+type Query {
+  players: [Player]
+}
+
