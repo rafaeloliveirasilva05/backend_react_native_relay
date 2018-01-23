@@ -22,6 +22,7 @@ export default class App extends Component<{}> {
         environment={environment}
         query={graphql`
           query AppQuery {
+              
             players{
               ... Post_item
             }
@@ -32,7 +33,12 @@ export default class App extends Component<{}> {
           if (error) {
             return <Text>{error.message}</Text>;
           } else if (props) {
-            return <Post players={props.players} />
+
+            return (
+              <View>
+                {props.players.map(item => <Post item={item} />)}
+              </View>
+            )
           }
           return <Text>Loading</Text>;
         }}
@@ -40,7 +46,5 @@ export default class App extends Component<{}> {
     );
   }
 }
-
-
 
 
