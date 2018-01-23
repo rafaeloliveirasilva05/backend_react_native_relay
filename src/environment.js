@@ -6,7 +6,7 @@ import {
 } from 'relay-runtime';
 
 function fetchQuery(operation, variables, cacheConfig, uploadables) {
-    return fetch('http://10.0.3.2:3000', {
+    return fetch('http://10.0.3.2:3000/', {
         method: 'POST',
         headers: {
             Accept: 'application/json',
