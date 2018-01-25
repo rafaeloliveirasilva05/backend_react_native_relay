@@ -13,14 +13,12 @@ import {
 
 class Post extends React.Component {
     render() {
-        return (
-            <View style={{ flex: 1, backgroundColor: '#fff' }}>
-                <ScrollView>
-                    {this.props.players.map(player => (
 
-                        <Text>{player.fullName}teste</Text>
-                    ))}
-                </ScrollView>
+        const jogador = this.props.item;
+
+        return (
+            <View>
+                <Text>{jogador.fullName}</Text>
             </View>
         )
     }
@@ -29,7 +27,7 @@ class Post extends React.Component {
 export default createFragmentContainer(
     Post,
     graphql`
-        fragment Post_item on Player @relay(plural: true){
+        fragment Post_item on Player{
             fullName
         }
     `,
